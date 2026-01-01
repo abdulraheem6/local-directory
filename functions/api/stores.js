@@ -25,35 +25,43 @@
 // }
 
 
-export async function onRequestGet({ request, env }) {
-  const url = new URL(request.url);
-  const params = Object.fromEntries(url.searchParams);
+// export async function onRequestGet({ request, env }) {
+//   const url = new URL(request.url);
+//   const params = Object.fromEntries(url.searchParams);
 
-  const {
-    state,
-    district,
-    mandal,
-    category,
-    type
-  } = params;
+//   const {
+//     state,
+//     district,
+//     mandal,
+//     category,
+//     type
+//   } = params;
 
-  const basePath =
-    `data/${state}/${district}/${mandal}/${category}/${type}`;
+//   const basePath =
+//     `data/${state}/${district}/${mandal}/${category}/${type}`;
 
-  const promotedObj =
-    await env.R2_BUCKET.get(`${basePath}/promoted.json`);
+//   const promotedObj =
+//     await env.R2_BUCKET.get(`${basePath}/promoted.json`);
 
-  const basicObj =
-    await env.R2_BUCKET.get(`${basePath}/basic.json`);
+//   const basicObj =
+//     await env.R2_BUCKET.get(`${basePath}/basic.json`);
 
-  return new Response(JSON.stringify({
-    promoted: promotedObj
-      ? JSON.parse(await promotedObj.text())
-      : [],
-    normal: basicObj
-      ? JSON.parse(await basicObj.text())
-      : []
-  }), {
-    headers: { "Content-Type": "application/json" }
-  });
+//   return new Response(JSON.stringify({
+//     promoted: promotedObj
+//       ? JSON.parse(await promotedObj.text())
+//       : [],
+//     normal: basicObj
+//       ? JSON.parse(await basicObj.text())
+//       : []
+//   }), {
+//     headers: { "Content-Type": "application/json" }
+//   });
+// }
+
+
+export async function onRequestGet() {
+  return new Response(
+    JSON.stringify({ message: "API WORKING" }),
+    { headers: { "Content-Type": "application/json" } }
+  );
 }

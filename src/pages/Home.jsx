@@ -20,8 +20,21 @@ export default function Home() {
     if (!ready) return;
 
     const params = new URLSearchParams(filters);
+    //const res = await fetch(`/api/stores?${params}`);
+    
     const res = await fetch(`/api/stores?${params}`);
+
+    if (!res.ok) {
+      const text = await res.text();
+      console.error("API error:", res.status, text);
+      return;
+    }
+
     const data = await res.json();
+    console.log(data);
+    
+    
+    //const data = await res.json();
 
     setPromoted(data.promoted || []);
     setNormal(data.normal || []);

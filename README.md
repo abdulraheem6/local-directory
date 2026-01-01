@@ -5,7 +5,7 @@ Local Stores & Services Directory
 Tech:
 - React + Vite
 - Cloudflare Pages
-- Cloudflare R2
+- Cloudflare R2 v
 
 Features:
 - India-only hierarchy

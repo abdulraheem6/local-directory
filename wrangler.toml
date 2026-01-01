@@ -1,3 +1,4 @@
-name = "local-directory"[[r2_buckets]]
+name = "local-directory"
+[[r2_buckets]]
 binding = 'R2_BUCKET'
 bucket_name = 'searchme4u-assets'

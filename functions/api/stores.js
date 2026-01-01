@@ -1,3 +1,5 @@
+//Hello guys
+
 // export async function onRequestGet({ env, request }) {
 //   const q = Object.fromEntries(
 //     new URL(request.url).searchParams

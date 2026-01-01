@@ -4,11 +4,11 @@ import GroceryTemplate from "../templates/GroceryTemplate";
 import ElectricianTemplate from "../templates/ElectricianTemplate";
 
 export default function Details() {
-  const { category, type, id } = useParams();
+  const { state, district, mandal, category, type, id } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/details?category=${category}&type=${type}&id=${id}`)
+    fetch(`/api/details?state=${state}&district=${district}&mandal=${mandal}&category=${category}&type=${type}&id=${id}`)
       .then(r => r.json())
       .then(setData);
   }, []);

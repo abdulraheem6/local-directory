@@ -6,7 +6,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/details/:category/:type/:id" element={<Details />} />
+      <Route path="/details/:state/:district/:mandal/:category/:type/:id" element={<Details />} />
     </Routes>
   );
 }
